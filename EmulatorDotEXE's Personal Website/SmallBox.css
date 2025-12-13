@@ -1,0 +1,68 @@
+.small-box {
+    width: 200px;         /* Sets the width of the content area */
+    height: 100px;        /* Sets the height of the content area */
+    padding: 10px;        /* Adds space between content and border */
+    border: 1px solid #ccc; /* Adds a border around the content and padding */
+    margin: 20px;         /* Adds space outside the border, separating it from other elements */
+    background-color: #37eb2d; /* Adds a background color */
+    box-sizing: border-box;
+    border-radius: 8px;  /* Ensures padding and border are included in the width/height calculation */
+    cursor: pointer;
+}
+.small-box:hover{
+    background-image: linear-gradient(135deg,#00a2ff,#7b00ff);
+    transition:opacity .7s ease-in-out, transform .7s ease-in-out;
+    transition: .7s ease-out;
+    
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+    cursor: pointer;
+    
+}
+
+.styled-box:hover {
+    background-color: #7f9d77;
+}
+.small-box h3 {
+    margin-top: 0;        /* Removes default top margin for the heading */
+}
+.box-link {
+    text-decoration: none; /* Removes the underline from the text */
+    color: inherit;        /* Keeps the text color normal/inherited */
+    display: block;        /* Ensures the link behaves as a block element */
+    width: fit-content;    /* Prevents the link/box from spanning the full width of the screen by default */
+    
+}
+.box-link:hover .info-box {
+    background-color: #eef; /* A lighter blue hover color */
+    border-color: #0056b3;
+}
+
+.menu {
+    position:absolute;
+            right:0;
+            margin-top:0.5rem;
+            width: 200px;         /* Sets the width of the content area */
+            height: 168px;   
+            background:var(--card);
+            color:#111;
+            border-radius:8px;
+            box-shadow:0 8px 30px rgba(2,6,23,0.12);
+            overflow:hidden;
+            transform-origin:top right;
+            transition:opacity .12s ease, transform .12s ease;
+            opacity:0;pointer-events:none;transform:translateY(-6px) scale(.98);
+}
+
+.cardstyle
+{
+    width: 300px;         /* Sets the width of the content area */
+    height: 200px;        /* Sets the height of the content area */
+    padding: 15px;        /* Adds space between content and border */
+    border: 1px solid #ccc; /* Adds a border around the content and padding */
+    margin: 25px;         /* Adds space outside the border, separating it from other elements */
+    background-color: #f0f0f0; /* Adds a background color */
+    box-sizing: border-box;
+    border-radius: 10px;  /* Ensures padding and border are included in the width/height calculation */
+    cursor: pointer;
+}

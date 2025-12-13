@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>JavaDocs</title>
+    <style>
+        :root{
+            --bg:#d1d1d1;
+            --nav:#000000;
+            --nav-contrast:#fff;
+            --muted:#6b7280;
+            --card:linear-gradient(135deg,rgb(0, 156, 247),#4400ff);
+            --shadow: 0 2px 6px rgba(8,26,56,0.08);
+            --radius:8px;
+        }
+        *{box-sizing:border-box}
+        body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;background:var(--bg);color:#ffffff}
+        /* Top toolbar */
+        .topbar{
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:1rem;
+            padding:0.5rem .5rem;
+            background:var(--nav);
+            color:var(--nav-contrast);
+            box-shadow:var(--shadow);
+            position:sticky;
+            top:0;
+            z-index:50;
+        }
+        .brand{
+            display:flex;
+            align-items:center;
+            gap:0.75rem;
+            text-decoration:none;
+            color:inherit;
+        }
+        .brand .logo{
+            width:36px;height:36px;border-radius:7px;background:linear-gradient(135deg,rgb(118, 1, 252),#00a2ff);display:flex;align-items:center;justify-content:center;
+            color:var(--nav);font-weight:600;
+        }
+        .brand h1{font-size:1rem;margin:0}
+        nav{display:flex;align-items:center;gap:0.5rem}
+        /* Dropdown */
+        .dropdown{position:relative}
+        .drop-toggle{
+            background:linear-gradient(135deg,rgb(0, 156, 247),#4400ff);border:0;color:inherit;padding:0.5rem 0.75rem;border-radius:6px;cursor:pointer;font-weight:600;
+        }
+        .drop-toggle:focus{outline:3px solid rgb(0, 0, 0)}
+        .menu{
+            position:absolute;
+            right:0;
+            margin-top:0.5rem;
+            min-width:180px;
+            background:var(--card);
+            background-color: #e0e0e0;
+            color:#000000;
+            border-radius:8px;
+            box-shadow:0 8px 30px rgba(2,6,23,0.12);
+            overflow:shown;
+            transform-origin:top right;
+            transition:opacity .3s ease, transform .3s ease;
+            opacity:0;pointer-events:none;transform:translateY(-6px) scale(.98);
+        }
+        .menu.open{opacity:1;pointer-events:auto;transform:translateY(0) scale(1)}
+        .menu a{
+            display:block;padding:0.6rem 0.9rem;text-decoration:none;color:inherit;border-bottom:1px solid #000000;
+             display:block;padding:0.6rem 0.9rem;text-decoration:none;color:inherit;border-left:1px solid #000000;
+              display:block;padding:0.6rem 0.9rem;text-decoration:none;color:inherit;border-right:1px solid #000000;
+               display:block;padding:0.6rem 0.9rem;text-decoration:none;color:inherit;border-Top:1px solid #000000;
+                display:block;padding:0.6rem 0.9rem;text-decoration:none;color:inherit;border-bottom:1px solid #000000;
+        }
+        .menu a:last-child{border: bottom 5px;}
+        .menu a:hover{background:#a1a1a18f}
+        /* Page layout */
+        main{max-width:980px;margin:2rem auto;padding:1rem;}
+        .card{background:var(--card);padding:1rem;border-radius:var(--radius);box-shadow:var(--shadow)}
+        footer{text-align:center;padding:1rem;color:var(--muted);font-size:.9rem}
+        /* Responsive small screens */
+        @media (max-width:560px){
+            .brand h1{font-size:.9rem}
+            .menu{right:0;left:0;margin:0.4rem;border-radius:0.5rem}
+        }
+    </style>
+</head>
+<body>
+    <header class="topbar" role="banner">
+        <a href="Website.HTML" class="brand" aria-label="Homepage">
+            <span class="logo">.Exe</span>
+            <h1>JavaDocs</h1>
+        </a>
+
+        <nav role="navigation" aria-label="Main navigation">
+            <div class="dropdown" id="pagesDropdown">
+                <button class="drop-toggle" id="dropToggle" aria-haspopup="true" aria-expanded="false" aria-controls="dropMenu">
+                    Pages ▾
+                </button>
+                <div class="menu" id="dropMenu" role="menu" aria-labelledby="dropToggle">
+                    <a href="Website.HTML" role="menuitem">Home</a>
+                    <a href="about.html" role="menuitem">About</a>
+                    <a href="DocumentationPage.HTML" role="menuitem">Documentation</a>
+                    <a href="contact.html" role="menuitem">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="card">
+            <h1>Java Documentation</h1>
+            <p>Documentation related to VScode java WPIlib code for FRC will be occasionally.</p>
+            <p>Choose which part of Java you want to look into.</p>
+        </section>
+    </main>
+
+    <main>
+        <section class="small-box">
+            <link rel="stylesheet" href="JDbox.css">
+            <div class="small-box2">
+            <a href="JavaDocs.HTML" class="link-box">
+                <h3>REVLib 25'</h3>
+                <p>Learn the fundamentals of REVLib 25'!</p>
+            </a>
+        </div>
+        </section>
+        <main>
+
+    <footer>
+        © <span id="year"></span> EmulatorDotEXE
+    </footer>
+
+    <script>
+        // Dropdown behavior: toggle, close on outside click or Escape
+        (function(){
+            const toggle = document.getElementById('dropToggle');
+            const menu = document.getElementById('dropMenu');
+
+            function setOpen(isOpen){
+                menu.classList.toggle('open', isOpen);
+                toggle.setAttribute('aria-expanded', String(Boolean(isOpen)));
+            }
+
+            toggle.addEventListener('click', e => {
+                e.stopPropagation();
+                setOpen(!menu.classList.contains('open'));
+            });
+
+            // Close when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!menu.classList.contains('open')) return;
+                if (!menu.contains(e.target) && !toggle.contains(e.target)) setOpen(false);
+            });
+
+            // Close on Escape
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') setOpen(false);
+            });
+
+            // Set current year
+            document.getElementById('year').textContent = new Date().getFullYear();
+        })();
+    </script>
+</body>
+</html>

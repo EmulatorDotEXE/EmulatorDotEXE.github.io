@@ -1,0 +1,22 @@
+.small-box2 {
+    width: 360px;         /* Sets the width of the content area */
+    height: 200px;        /* Sets the height of the content area */
+    padding: 10px;        /* Adds space between content and border */
+    border: 2px solid #000000; /* Adds a border around the content and padding */
+    margin: .5px;         /* Adds space outside the border, separating it from other elements */
+    background-image: linear-gradient(135deg,#ff0000,#7b00ff);
+ /* Adds a background color */
+    box-sizing: border-box;
+    border-radius: 18px;  /* Ensures padding and border are included in the width/height calculation */
+    text-decoration: none;
+    transition: background-image .25s ease, transform .12s ease, box-shadow .18s ease;
+}
+.link-box{ 
+    text-decoration: none;
+    color: inherit;
+}
+.small-box2:hover{
+    background-image: linear-gradient(135deg,#ff0000,#7b00ff);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+    
+}
