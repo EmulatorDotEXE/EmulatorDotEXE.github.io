@@ -66,3 +66,9 @@
     border-radius: 10px;  /* Ensures padding and border are included in the width/height calculation */
     cursor: pointer;
 }
+.spaced-text {
+    /* A unitless value (like 1.8) is often recommended for better accessibility */
+    line-height: 1.8; 
+    /* Alternatively, you can use specific units like pixels: */
+    /* line-height: 25px; */ 
+}
