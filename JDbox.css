@@ -11,12 +11,44 @@
     text-decoration: none;
     transition: background-image .25s ease, transform .12s ease, box-shadow .18s ease;
 }
+.small-box1 {
+    right: 0;
+    width: 200px;         /* Sets the width of the content area */
+    height: 100px;        /* Sets the height of the content area */
+    padding: 10px;        /* Adds space between content and border */
+    border: 1px solid #ccc; /* Adds a border around the content and padding */
+    margin: 20px;         /* Adds space outside the border, separating it from other elements */
+    background-color: #ff5733; /* Adds a background color */
+    box-sizing: border-box;
+    border-radius: 8px;  /* Ensures padding and border are included in the width/height calculation */
+    cursor: pointer;
+}
+.small-box3 {
+    width: 400px;         /* Sets the width of the content area */
+    height: 150px;        /* Sets the height of the content area */
+    padding: 15px;        /* Adds space between content and border */
+    border: 2px solid #444444; /* Adds a border around the content and padding */
+    margin: 10px;         /* Adds space outside the border, separating it from other elements */
+    background-image: linear-gradient(135deg,#1500ff,#b700ff);
+    box-sizing: border-box;
+    border-radius: 12px;  /* Ensures padding and border are included in the width/height calculation */
+    cursor: pointer;
+    transition: background-image .25s ease, transform .12s ease, box-shadow .18s ease;
+}
+.small-box3:hover{
+    background-image: linear-gradient(135deg,#00ffea,#00ff6a);
+    transition: background-image .7s ease, transform .7s ease, box-shadow .3s ease;
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    cursor: pointer;
+    
+}
 .link-box{ 
     text-decoration: none;
     color: inherit;
 }
 .small-box2:hover{
-    background-image: linear-gradient(135deg,#ff0000,#7b00ff);
+    background-image: linear-gradient(90deg,#00ffea,#00ff6a);
     box-shadow: 0 8px 20px rgba(0,0,0,0.18);
-    
+    transform: translateY(-4px);
 }

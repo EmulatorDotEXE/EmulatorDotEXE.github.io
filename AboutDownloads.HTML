@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>REVLib25 Documentation</title>
+	<style>
+		html, body { height: 100%; margin: 0; }
+		body {
+			background-color: #ffffff;
+			color: #111;
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+			display: flex;
+			align-items: flex-start;
+			justify-content: flex-start;
+			padding: 32px;
+			box-sizing: border-box;
+			/* animation setup: start hidden */
+			opacity: 0;
+			transition: opacity 1s ease-in;
+		}
+		body.visible { opacity: 1; }
+		body.fade-out { opacity: 0; transition: opacity 280ms ease; }
+		.container { max-width: 900px; }
+		h1 { margin: 0 0 16px; font-size: 1.8rem; }
+		p { margin: 0; line-height: 1.6; font-size: 1rem; }
+	</style>
+</head>
+	<body>
+		<main class="container" role="main">
+			<h1>DOWNLOAD INFO:</h1>
+			<p>SOFTWARE: </p>
+            <p><b>* WPILib: v25.3.2 ✅</b></p>
+            <p><b>* GITHUB_DESKTOP v3.5.4 ✅</b></p>
+            <p><b>* VISUAL STUDIO CODE: v1.107 ✅</b></p>
+            <p><b>* JAVA JDK: v17.0.8~ ✅</b></p>
+            <p><b>* REVLib: v25 ✅</b></p>
+            <p><b>* WPILib NEW_COMMANDS: v1.0.0 ✅</b></p>
+            <p><b>* FRC_GAMETOOLS v2025 ✅</p></b>
+            <p>OS SUPPORT:</p>
+            <p><b>Microsoft Widnows 11 ✅</b></p>
+            <p><b>Microsoft windows 10⚠️</b></p>
+            <p>Microsoft Windows 10 has reached the end of its support as of 10/14/25. please consider Updating to windows 11 as apps slowly phase out
+            support for Windows 10 over the next few years. current software will still work on Windows 10, but FRC will no longer be supporting it after the 2025 season.
+            Windows 10 users should HEAVILY consider Updating to Windows 10 LTSC for sucurity updates if they cannot update to Windows 11 at this time.
+            </p>
+            <p><b>MacOS 12.0+ ✅</b></p>
+            <p><b>Linux Ubuntu 20.04+ ✅</b></p>
+            
+    
+        
+
+        <footer style="text-align:center;padding:1rem;color:var(--muted);font-size:.9rem">© <span id="year"></span> EmulatorDotEXE</footer>
+ 
+
+
+		</main>
+
+		<script>
+		// Fade-in on load
+		document.addEventListener('DOMContentLoaded', function () {
+			requestAnimationFrame(function () {
+				document.body.classList.add('visible');
+			});
+		});
+
+        
+		// Fade-out for in-page navigation: intercept same-origin links
+		document.addEventListener('click', function (e) {
+			const a = e.target.closest('a');
+			if (!a) return;
+			try {
+				const url = new URL(a.href, location.href);
+				if (url.origin === location.origin) {
+					e.preventDefault();
+					document.body.classList.add('fade-out');
+					setTimeout(function () { location.href = url.href; }, 320);
+				}
+			} catch (err) {
+				// if URL parsing fails, just navigate normally
+			}
+		});
+
+		// Best-effort fade-out when page is hidden or being unloaded
+		document.addEventListener('visibilitychange', function () {
+			if (document.visibilityState === 'hidden') {
+				document.body.classList.add('fade-out');
+			}
+		});
+		window.addEventListener('pagehide', function () { document.body.classList.add('fade-out'); });
+        document.getElementById('year').textContent = new Date().getFullYear();
+		</script>
+	</body>
+	</html>
+

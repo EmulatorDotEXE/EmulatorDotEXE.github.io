@@ -9,6 +9,7 @@
     border-radius: 8px;  /* Ensures padding and border are included in the width/height calculation */
     cursor: pointer;
 }
+
 .small-box:hover{
     background-image: linear-gradient(135deg,#00a2ff,#7b00ff);
     transition:opacity .7s ease-in-out, transform .7s ease-in-out;
